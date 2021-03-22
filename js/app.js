@@ -1,8 +1,8 @@
 let WorkingHours = ['7 AM','8 AM','9 AM','10 AM','11 AM','12 PM','1 PM','2 PM','3 PM','4 PM','5 PM','6 PM','7 PM','8 PM'];
 
 // first Object:
-const Seattle = {
-  Location:'seattle',
+const seattle = {
+  Location:'Seattle',
   MinCust: 23,
   MaxCust: 65,
   AvgCookie: 6.3,
@@ -17,7 +17,6 @@ const Seattle = {
     return Math.ceil(this.AvgCust);
   },
   findCookiesPerHour: function(){
-    this.total =0;
     for (let i=0; i< WorkingHours.length;i++){
       this.findAvgCust();
       this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
@@ -35,7 +34,7 @@ const Seattle = {
     // console.log(mainEl);
     const H1El = document.createElement ('h1');
     mainEl.appendChild(H1El);
-    H1El.textContent= 'Sales Data';
+    H1El.textContent= 'Sales Data:';
 
     const UlEl = document.createElement ('ul');
     mainEl.appendChild(UlEl);
@@ -53,17 +52,17 @@ const Seattle = {
 };
 // cooling first object:
 
-Seattle.findAvgCust();
-console.log(Seattle.AvgCust);
+seattle.findAvgCust();
+// console.log(seattle.AvgCust);
 
-Seattle.findCookiesPerHour();
-console.log(Seattle.Results);
-console.log(Seattle.total);
+seattle.findCookiesPerHour();
+// console.log(seattle.Results);
+// console.log(seattle.total);
 
-Seattle.displaying();
+seattle.displaying();
 
 // Second Object:
-const Tokyo = {
+const tokyo = {
   Location:'Tokyo',
   MinCust: 3,
   MaxCust: 24,
@@ -79,7 +78,6 @@ const Tokyo = {
     return Math.ceil(this.AvgCust);
   },
   findCookiesPerHour: function(){
-    this.total =0;
     for (let i=0; i< WorkingHours.length;i++){
       this.findAvgCust();
       this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
@@ -113,18 +111,18 @@ const Tokyo = {
 };
 // cooling Tokyo object:
 
-Tokyo.findAvgCust();
-console.log(Tokyo.AvgCust);
+tokyo.findAvgCust();
+// console.log(tokyo.AvgCust);
 
-Tokyo.findCookiesPerHour();
-console.log(Tokyo.Results);
-console.log(Tokyo.total);
+tokyo.findCookiesPerHour();
+// console.log(tokyo.Results);
+// console.log(tokyo.total);
 
-Tokyo.displaying();
+tokyo.displaying();
 
 
 // Dubai Object:
-const Dubai = {
+const dubai = {
   Location:'Dubai',
   MinCust: 11,
   MaxCust: 38,
@@ -140,7 +138,6 @@ const Dubai = {
     return Math.ceil(this.AvgCust);
   },
   findCookiesPerHour: function(){
-    this.total =0;
     for (let i=0; i< WorkingHours.length;i++){
       this.findAvgCust();
       this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
@@ -156,7 +153,7 @@ const Dubai = {
     const mainEl = document.createElement('main');
     container.appendChild(mainEl);
     // console.log(mainEl);
-   
+
 
     const UlEl = document.createElement ('ul');
     mainEl.appendChild(UlEl);
@@ -174,17 +171,17 @@ const Dubai = {
 };
 // cooling Dubai object:
 
-Dubai.findAvgCust();
-console.log(Dubai.AvgCust);
+dubai.findAvgCust();
+// console.log(dubai.AvgCust);
 
-Dubai.findCookiesPerHour();
-console.log(Dubai.Results);
-console.log(Dubai.total);
+dubai.findCookiesPerHour();
+// console.log(dubai.Results);
+// console.log(dubai.total);
 
-Dubai.displaying();
+dubai.displaying();
 
 // Paris Object:
-const Paris = {
+const paris = {
   Location:'Paris',
   MinCust: 20,
   MaxCust: 38,
@@ -200,7 +197,6 @@ const Paris = {
     return Math.ceil(this.AvgCust);
   },
   findCookiesPerHour: function(){
-    this.total =0;
     for (let i=0; i< WorkingHours.length;i++){
       this.findAvgCust();
       this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
@@ -233,18 +229,18 @@ const Paris = {
 };
 // cooling Paris object:
 
-Paris.findAvgCust();
-console.log(Paris.AvgCust);
+paris.findAvgCust();
+// console.log(paris.AvgCust);
 
-Paris.findCookiesPerHour();
-console.log(Paris.Results);
-console.log(Paris.total);
+paris.findCookiesPerHour();
+// console.log(paris.Results);
+// console.log(paris.total);
 
-Paris.displaying();
+paris.displaying();
 
 
 // Lima Object:
-const Lima = {
+const lima = {
   Location:'Lima',
   MinCust: 2,
   MaxCust: 16,
@@ -260,7 +256,6 @@ const Lima = {
     return Math.ceil(this.AvgCust);
   },
   findCookiesPerHour: function(){
-    this.total =0;
     for (let i=0; i< WorkingHours.length;i++){
       this.findAvgCust();
       this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
@@ -293,13 +288,13 @@ const Lima = {
 };
 // cooling Paris object:
 
-Lima.findAvgCust();
-console.log(Lima.AvgCust);
+lima.findAvgCust();
+// console.log(lima.AvgCust);
 
-Lima.findCookiesPerHour();
-console.log(Lima.Results);
-console.log(Lima.total);
+lima.findCookiesPerHour();
+// console.log(lima.Results);
+// console.log(lima.total);
 
-Lima.displaying();
+lima.displaying();
 
 
