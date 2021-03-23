@@ -76,6 +76,8 @@ const Tokyo = new MainLocation ('Tokyo',3,24,1.2);
 Tokyo.findAvgCust();
 Tokyo.findCookiesPerHour();
 // Tokyo.displaying();
+Tokyo.creatTable();
+
 
 
 const Dubai = new MainLocation ('Dubai',11,38,3.7);
