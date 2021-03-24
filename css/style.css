@@ -5,7 +5,7 @@ table {
     width: 100%;
   }
 
-table, td{
+table, td,th{
     border-style: solid;
 }
 .navbar {
