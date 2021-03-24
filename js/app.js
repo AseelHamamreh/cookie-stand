@@ -1,6 +1,8 @@
 'use strict';
 
 let WorkingHours = ['06:00 AM','07:00 AM','08:00 AM','09:00 AM','10:00 AM','11:00 AM','12:00 PM','01:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM','06:00 PM','07:00 PM'];
+let AllObjects=[];
+let TotalOfTotals=0;
 
 function MainLocation(Location,MinCust,MaxCust,AvgCookie){
   this.Location = Location;
@@ -11,6 +13,8 @@ function MainLocation(Location,MinCust,MaxCust,AvgCookie){
   this.total=0;
   this.CookiesPerHour=[];
   this.Results=[];
+  this.finalArray=[];
+  AllObjects.push(this);
 }
 
 MainLocation.prototype.findAvgCust= function(){
@@ -25,6 +29,7 @@ MainLocation.prototype.findCookiesPerHour= function(){
     this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
     this.total= this.total+this.CookiesPerHour[i];
     this.Results=this.CookiesPerHour;
+    this.finalArray.push(this.CookiesPerHour);
   }
 };
 
@@ -45,6 +50,8 @@ const Last = document.createElement('th');
 trEl.appendChild(Last);
 Last.textContent= 'Daily Location Total';
 
+
+
 MainLocation.prototype.creatTable= function(){
   const trEl2 = document.createElement ('tr');
   Table.appendChild(trEl2);
@@ -62,6 +69,35 @@ MainLocation.prototype.creatTable= function(){
   total.textContent= this.total;
 };
 
+MainLocation.prototype.totals=function(){
+  let Totals = 0;
+  for (let i =0; i<this.finalArray.length;i++){
+    Totals=Totals+this.finalArray;
+  }
+};
+
+function lastRow(){
+  const tr2 =document.createElement('tr');
+  Table.appendChild(tr2);
+
+  const th2 = document.createElement('th');
+  tr2.appendChild(th2);
+  th2.textContent='Total';
+
+  for(let i =0;i<WorkingHours.length;i++){
+    let Res=0 ;
+    for(let j=0;j<AllObjects.length;j++){
+      Res=Res+AllObjects[j].CookiesPerHour[i];
+    }
+    const th3 =document.createElement('th');
+    tr2.appendChild(th3);
+    th3.textContent=Res;
+    TotalOfTotals=TotalOfTotals+Res;
+  }
+  const th4 =document.createElement('th');
+  tr2.appendChild(th4);
+  th4.textContent=TotalOfTotals;
+}
 
 // cooling:
 
@@ -70,6 +106,8 @@ Seattle.findAvgCust();
 Seattle.findCookiesPerHour();
 // Seattle.displaying();
 Seattle.creatTable();
+console.log(Seattle.totals);
+
 
 
 const Tokyo = new MainLocation ('Tokyo',3,24,1.2);
@@ -99,6 +137,11 @@ Lima.findAvgCust();
 Lima.findCookiesPerHour();
 // Lima.displaying();
 Lima.creatTable();
+
+lastRow();
+
+
+
 
 
 
