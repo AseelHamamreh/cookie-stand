@@ -1,7 +1,61 @@
+*{
+  font-family: 'Architects Daughter', cursive;
+}
 table {
     width: 100%;
   }
 
 table, td{
     border-style: solid;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+header{
+  background-color : rgba(128,128,128,0.2);
+  
+}
+
+ul{
+  text-align: right ;
+}
+li{
+  list-style: none ;
+  display: inline;
+  margin-right: 3% ;
+}
+a{
+  text-decoration: none;
+}
+
+ h1 {
+  padding: 30px 20px 50px 20px;
+  font-size: 30px;
+}
+
+div img{
+  float: left;
+  width: 15% ;
+  padding: 20px 20px 50px 20px;
+
 }

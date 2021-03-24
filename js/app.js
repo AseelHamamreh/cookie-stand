@@ -11,6 +11,7 @@ function MainLocation(Location,MinCust,MaxCust,AvgCookie){
   this.total=0;
   this.CookiesPerHour=[];
   this.Results=[];
+  this.finalArray=[];
 }
 
 MainLocation.prototype.findAvgCust= function(){
@@ -25,6 +26,7 @@ MainLocation.prototype.findCookiesPerHour= function(){
     this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
     this.total= this.total+this.CookiesPerHour[i];
     this.Results=this.CookiesPerHour;
+    this.finalArray.push(this.CookiesPerHour);
   }
 };
 
@@ -45,6 +47,8 @@ const Last = document.createElement('th');
 trEl.appendChild(Last);
 Last.textContent= 'Daily Location Total';
 
+
+
 MainLocation.prototype.creatTable= function(){
   const trEl2 = document.createElement ('tr');
   Table.appendChild(trEl2);
@@ -62,6 +66,13 @@ MainLocation.prototype.creatTable= function(){
   total.textContent= this.total;
 };
 
+MainLocation.prototype.totals=function(){
+  let Totals = 0;
+  for (let i =0; i<this.finalArray.length;i++){
+    Totals=Totals+this.finalArray;
+  }
+};
+
 
 // cooling:
 
@@ -70,6 +81,9 @@ Seattle.findAvgCust();
 Seattle.findCookiesPerHour();
 // Seattle.displaying();
 Seattle.creatTable();
+console.log(Seattle.totals);
+
+
 
 
 const Tokyo = new MainLocation ('Tokyo',3,24,1.2);
@@ -99,6 +113,9 @@ Lima.findAvgCust();
 Lima.findCookiesPerHour();
 // Lima.displaying();
 Lima.creatTable();
+
+
+
 
 
 
