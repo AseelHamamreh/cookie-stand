@@ -3,6 +3,7 @@
 let WorkingHours = ['06:00 AM','07:00 AM','08:00 AM','09:00 AM','10:00 AM','11:00 AM','12:00 PM','01:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM','06:00 PM','07:00 PM'];
 let AllObjects=[];
 let TotalOfTotals=0;
+let Test =[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 function MainLocation(Location,MinCust,MaxCust,AvgCookie){
   this.Location = Location;
@@ -27,6 +28,7 @@ MainLocation.prototype.findCookiesPerHour= function(){
   for (let i=0; i< WorkingHours.length;i++){
     this.findAvgCust();
     this.CookiesPerHour[i]=Math.ceil(this.AvgCust*this.AvgCookie);
+    Test[i]=Test[i]+this.CookiesPerHour[i];
     this.total= this.total+this.CookiesPerHour[i];
     this.Results=this.CookiesPerHour;
     this.finalArray.push(this.CookiesPerHour);
@@ -84,20 +86,20 @@ function lastRow(){
   tr2.appendChild(th2);
   th2.textContent='Total';
 
-  for(let i =0;i<WorkingHours.length;i++){
-    let Res=0 ;
-    for(let j=0;j<AllObjects.length;j++){
-      Res=Res+AllObjects[j].CookiesPerHour[i];
-    }
+  for(let i =0;i<Test.length;i++){
+
     const th3 =document.createElement('th');
     tr2.appendChild(th3);
-    th3.textContent=Res;
-    TotalOfTotals=TotalOfTotals+Res;
+    th3.textContent=Test[i];
+  }
+  for(let i=0;i<AllObjects.length;i++){
+    TotalOfTotals=TotalOfTotals+AllObjects[i].total;
   }
   const th4 =document.createElement('th');
   tr2.appendChild(th4);
   th4.textContent=TotalOfTotals;
 }
+
 
 // cooling:
 
@@ -139,6 +141,33 @@ Lima.findCookiesPerHour();
 Lima.creatTable();
 
 lastRow();
+
+// Forms working"lab09":
+
+let locForm= document.getElementById('locForm');
+// console.log(locForm);
+// let addSection = document.getElementById('addButton');
+locForm.addEventListener('submit',addNewLocation);
+// console.log(addNewLocation);
+
+
+function addNewLocation(event) {
+  console.log(event);
+  event.preventDefault();
+  let Name = event.target.name.value;
+  let MinCust = event.target.mincust.value;
+  let MaxCust = event.target.maxcust.value;
+  let AvgCookie = event.target.avgcookie.value;
+
+  let NewLocation = new MainLocation(Name, MinCust, MaxCust, AvgCookie);
+  Table.deleteRow(-1);
+  TotalOfTotals=
+  NewLocation.findAvgCust();
+  NewLocation.findCookiesPerHour();
+  NewLocation.creatTable();
+  lastRow();
+}
+// console.log(Test);
 
 
 
