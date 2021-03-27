@@ -42,7 +42,7 @@ const trEl = document.createElement ('tr');
 Table.appendChild(trEl);
 const first = document.createElement('th');
 trEl.appendChild(first);
-first.textContent= '    ';
+first.textContent= 'Locations';
 for (let i=0; i<WorkingHours.length;i++){
   const FirstRow = document.createElement('th');
   trEl.appendChild(FirstRow);
