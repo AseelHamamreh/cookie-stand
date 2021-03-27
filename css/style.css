@@ -1,19 +1,64 @@
-*{
-  font-family: 'Architects Daughter', cursive;
+body{
+  width: 100%;
 }
-table {
-    width: 100%;
-  }
 
-table, td,th{
-    border-style: solid;
+
+table {
+  width: 80%;
+  margin-left:auto;margin-right:auto;
 }
+
+table, td {
+border-style:outset;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+table th{
+  background-color:  rgb(156, 172, 119);
+}
+#salesDataH1{
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  padding-top: 30px;
+}
+
+#locForm{
+  text-align: center;
+}
+legend{
+  font-size: 160%;
+
+}
+label{
+  font-size: 120%;
+}
+#addButton{
+  font-size: 150%;
+  padding: 2px 15px 2px 15px;
+  background-color:#dddddd;
+  color:  rgb(0, 0, 0);
+
+}
+
+form{
+  font-family:cursive;
+}
+input{
+  background-color: rgb(156, 172, 119);
+}
+
+
+
+
+
+
+
 .navbar {
-  overflow: hidden;
   background-color: #333;
   position: fixed;
-  top: 0;
   width: 100%;
+  position: fixed;
 }
 
 .navbar a {
@@ -31,31 +76,120 @@ table, td,th{
   color: black;
 }
 
-header{
-  background-color : rgba(128,128,128,0.2);
-  
-}
 
-ul{
-  text-align: right ;
-}
-li{
-  list-style: none ;
-  display: inline;
-  margin-right: 3% ;
-}
-a{
-  text-decoration: none;
-}
 
- h1 {
-  padding: 30px 20px 50px 20px;
-  font-size: 30px;
-}
-
-div img{
+#title img{
+  width: 200px; 
   float: left;
-  width: 15% ;
-  padding: 20px 20px 50px 20px;
+  margin-bottom: 30px;
+}
 
+#title h1 {
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 20px 20px 0px 20px;
+  margin-top: 20px;
+}
+
+#title p{
+  font-size: 20px;
+}
+
+#par{
+  padding: 20px;
+  width: 50%;
+  font-size: 120%;
+}
+
+
+ #aboutUs h1{
+  font-family:'Architects Daughter', cursive;
+  font-size: 50px;
+  padding: 20px;
+  padding-left: 200px;
+ }
+#aboutUs p{
+  width: 50%;
+  padding: 20px 20px 20px 200px;
+  float: left;
+  font-size: 120%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#aboutUs{
+  margin-bottom: 60px;
+}
+#aboutsUs img{
+  width: 25%;
+  height: 300px;
+
+}
+ 
+
+#part1,#part2, #part3{
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+#part1{
+  padding-left: 120px;
+}
+#part2{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#part1 img, #part2 img, #part3 img{
+  width: 250px;
+  padding-bottom: 30px;
+}
+#part2 img{
+
+ padding-top: 30px;
+}
+#part3 img{
+  height: 140px;
+}
+#part1 h2, #part2 h2, #part3 h2{
+  font-size: 130%;
+  font-family:'Architects Daughter', cursive;
+}
+#part2 h1{
+  font-family:'Architects Daughter', cursive;
+  font-weight: bold;
+}
+
+#Order h1{
+  font-family:'Architects Daughter', cursive;
+  font-size: 50px;
+  padding: 20px;
+  padding-left: 200px;
+ }
+#Order p{
+  width: 50%;
+  padding: 20px 20px 20px 200px;
+  float: left;
+  font-size: 120%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#Order{
+  margin-bottom: 60px;
+  clear: both;
+}
+#Order img{
+  width: 25%;
+  height: 200px;
+}
+
+footer{
+  clear: both;
+}
+#footer {
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  color: rgba(54, 14, 129, 0.4);
 }
